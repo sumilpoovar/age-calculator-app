@@ -1,0 +1,16 @@
+.flex-row {
+display: flex;
+}
+.fg-label {
+   margin-bottom: 4px;
+   font-size: medium;
+}
+.form-group {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid; 
+  margin-right: 3px;
+  input {
+    border: 0;
+  }
+}

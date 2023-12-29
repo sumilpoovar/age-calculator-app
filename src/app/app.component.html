@@ -1,0 +1,30 @@
+<div class="container">
+  <h2>Age Calculator</h2>
+  <form [formGroup]="ageForm" (ngSubmit)="calculateAge()">
+    <div class="flex-row">
+      <ng-container >
+      <div class="fg-label">
+      <label>DAY</label>
+    </div>
+    <div class="form-group">
+      <input type="number" id="day" name="day" formControlName="day" required>
+    </div>
+  </ng-container>
+  
+    <div class="form-group">
+      <label for="month">Month:</label>
+      <input type="number" id="month" name="month" formControlName="month" required>
+    </div>
+    <div class="form-group">
+      <label for="year">Year:</label>
+      <input type="number" id="year" name="year" formControlName="year" required>
+    </div>
+  </div>
+    <button type="submit" [disabled]="ageForm.invalid">Calculate Age</button>
+  </form>
+
+  <div *ngIf="age.years || age.months || age.days">
+    <h3>Your age is:</h3>
+    <p>{{ age.years }} years, {{ age.months }} months, {{ age.days }} days</p>
+  </div>
+</div>
