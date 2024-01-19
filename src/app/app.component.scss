@@ -1,16 +1,77 @@
-.flex-row {
-display: flex;
-}
 .fg-label {
    margin-bottom: 4px;
    font-size: medium;
 }
-.form-group {
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid; 
-  margin-right: 3px;
-  input {
-    border: 0;
+.bg-wrapper {
+  background: #e2e8f0;
+  height: 100%;
+  margin: -8px;
+  position: fixed;
+  width: 100%;
+}
+.container-wrap {
+  max-width: 560px;
+  margin: 100px auto 0;
+  background: #fff;
+  padding: 50px;
+  border-radius: 15px;
+  border-end-end-radius: 110px;
+}
+.form-wrap {
+  display: flex;
+  width: 100%;
+  flex-direction:row;
+  place-content: space-between;
+  margin-bottom: 20px;
+  .form-group {
+    display: flex;
+    width: 30%;
+    flex-direction: column;
+    .label{
+      color: #a4a4a4;
+      font-weight: bold;
+      margin-bottom: 16px;
+      font-size: 18px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .input {
+      border-radius: 7px;
+      border: 1px solid #e5e7eb;
+      padding: 15px;
+    }
+  }
+}
+.calculate-btn {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  border: none;
+  background: #5b21b6;
+  z-index: 1;
+  cursor: pointer;
+}
+.button-wrap {
+  display: flex;
+  justify-content: end;
+  position: relative;
+}
+.border-line {
+  border-bottom: 1px solid #d9d9d9;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+}
+.age-wrap {
+  .age-title {
+    margin-bottom: 0px;
+    font-size: 38px;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    margin-top: 0;
+    font-weight: bold;
+    color: #5b21b6;
+    line-height: 55px;
+    .age-sub{
+      color: #a4a4a4;
+    }
   }
 }

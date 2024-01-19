@@ -1,30 +1,34 @@
-<div class="container">
-  <h2>Age Calculator</h2>
-  <form [formGroup]="ageForm" (ngSubmit)="calculateAge()">
-    <div class="flex-row">
-      <ng-container >
-      <div class="fg-label">
-      <label>DAY</label>
+<div class="bg-wrapper">
+  <div class="container-wrap">
+    <form [formGroup]="ageForm" (ngSubmit)="calculateAge()">
+      <div class="form-wrap">
+        <div class="form-group">
+          <label class="label">Day</label>
+          <input class="input" type="number" id="day" name="day" formControlName="day" required>
+        </div> 
+        <div class="form-group">
+          <label class="label" for="month">Month:</label>
+          <input class="input" type="number" id="month" name="month" formControlName="month" required>
+        </div>
+        <div class="form-group">
+          <label class="label" for="year">Year</label>
+          <input class="input" type="number" id="year" name="year" formControlName="year" required>
+        </div>
     </div>
-    <div class="form-group">
-      <input type="number" id="day" name="day" formControlName="day" required>
+    <div class="button-wrap">
+      <div class="border-line"></div>
+      <button type="submit" [disabled]="ageForm.invalid" class="calculate-btn">
+        <img src="assets/images/down-arrow.svg">
+      </button>
     </div>
-  </ng-container>
-  
-    <div class="form-group">
-      <label for="month">Month:</label>
-      <input type="number" id="month" name="month" formControlName="month" required>
+     
+    </form>
+    
+    <div class="age-wrap">
+      <p class="age-title">{{  age.years  ? age.years : '--' }} <span class="age-sub">Years</span></p>
+      <p class="age-title">{{ age.months ? age.months : '--'}} <span class="age-sub">Months</span> </p>
+      <p class="age-title">{{ age.days ? age.days : '--'}} <span class="age-sub">Days</span> </p>
     </div>
-    <div class="form-group">
-      <label for="year">Year:</label>
-      <input type="number" id="year" name="year" formControlName="year" required>
-    </div>
-  </div>
-    <button type="submit" [disabled]="ageForm.invalid">Calculate Age</button>
-  </form>
-
-  <div *ngIf="age.years || age.months || age.days">
-    <h3>Your age is:</h3>
-    <p>{{ age.years }} years, {{ age.months }} months, {{ age.days }} days</p>
   </div>
 </div>
+
