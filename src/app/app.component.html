@@ -5,14 +5,17 @@
         <div class="form-group">
           <label class="label">Day</label>
           <input class="input" type="number" id="day" name="day" formControlName="day" required>
+          <div class="error" *ngIf="ageForm.get('day')?.invalid">Invalid Day</div>
         </div> 
         <div class="form-group">
           <label class="label" for="month">Month:</label>
           <input class="input" type="number" id="month" name="month" formControlName="month" required>
+          <div class="error" *ngIf="ageForm.get('month')?.invalid">Invalid month</div>
         </div>
         <div class="form-group">
           <label class="label" for="year">Year</label>
           <input class="input" type="number" id="year" name="year" formControlName="year" required>
+          <div class="error" *ngIf="ageForm.get('year')?.invalid">Invalid year</div>
         </div>
     </div>
     <div class="button-wrap">
